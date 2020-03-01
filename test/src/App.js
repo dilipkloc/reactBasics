@@ -1,26 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
+import React,{Component} from 'react';
+import ReactDOM from 'react-dom';
 import './App.css';
+  
+export default class App extends Component{
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  state = {
+    persons: [
+      {name: 'dilip'},
+      {name: 'kumar'}
+    ]
+  }
+
+  clickPrintName = (e) => {
+    //<h3 style={{textAlign: 'right'}}> By:  {this.state.persons[0].name} {this.state.persons[1].name}</h3>
+    ReactDOM.render(<h3 style={{textAlign: 'right'}}> By:  {this.state.persons[0].name} {this.state.persons[1].name}</h3>,document.getElementById('by'))
+    console.log('hit');
+  }
+
+
+  render() {
+    return(
+      <div className='App'>
+        <h1> Starting to the end with {this.props.name} </h1>
+        <h2>
+          {this.props.children}
+        </h2>
+          <button onClick={this.clickPrintName}> Click here to know the author </button>
+          <div id="by"></div>
+      </div>
+    )
+  }
+
 }
 
-export default App;
+// function App() {
+//   return (
+//     <div className="App">
+//         <h1>Starting to the end</h1>
+//     </div>
+//   );
+// }
+
+// export default App;
