@@ -17,9 +17,12 @@
 
     <script type="text/jsx">
 
-        // var app = (
-          //  <Process name = 'dilip'/>
-        //)
+         var app = (
+             <div>
+                <Process name = 'dilip'/>
+                <Process name = 'kumar'/>
+             </div>
+        )
 
         function Process(props) {
             return(
@@ -29,6 +32,6 @@
             );
         }
 
-        ReactDOM.render(<Process name='dilip'/>, document.getElementById('app'));
+        ReactDOM.render(app, document.getElementById('app'));
     </script>
 </html>
